@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mercedes:
+            client-id: client_id
+            client-secret: client_secret
+            scopes:
+              - mb:vehicle:status:general
+              - mb:user:pool:reader
+              - offline_access
+            redirect-uri: http://localhost/vehicle
+            authorization-grant-type: authorization_code
+        provider:
+          mercedes:
+            token-uri: https://id.mercedes-benz.com/as/token.oauth2
+            authorization-uri: https://id.mercedes-benz.com/as/authorization.oauth2
+
+mercedes:
+  feign:
+    name: mercedes
+    url: https://api.mercedes-benz.com/experimental/connectedvehicle/v2
+
+allowed-origins:
+    origins:
+      -http://localhost
