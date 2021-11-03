@@ -4,24 +4,24 @@ spring:
       client:
         registration:
           mercedes:
-            client-id: client_id
-            client-secret: client_secret
+            client-id: CLIENT_ID
+            client-secret: CLIENT_SECRET
             scopes:
               - mb:vehicle:status:general
               - mb:user:pool:reader
               - offline_access
             redirect-uri: http://localhost/vehicle
-            authorization-grant-type: authorization_code
+            authorization-grant-type: AUTHORIZATION_CODE
         provider:
           mercedes:
-            token-uri: https://id.mercedes-benz.com/as/token.oauth2
-            authorization-uri: https://id.mercedes-benz.com/as/authorization.oauth2
+            token-uri: TOKEN_URI
+            authorization-uri: AUTHORIZATION_URI
 
 mercedes:
   feign:
-    name: mercedes
-    url: https://api.mercedes-benz.com/experimental/connectedvehicle/v2
+    name: NAME
+    url: URL
 
 allowed-origins:
     origins:
-      -http://localhost
+      -http://localhost:4200
